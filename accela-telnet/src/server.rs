@@ -7,7 +7,8 @@ fn handle_client(mut stream: &TcpStream) {
 }
 
 pub(crate) fn run() -> io::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:3301")?;
+    //let listener = TcpListener::bind("127.0.0.1:3301")?;
+    let listener = TcpListener::bind("0.0.0.0:3301")?;
 
     // accept connections and process them serially
     for stream in listener.incoming() {
